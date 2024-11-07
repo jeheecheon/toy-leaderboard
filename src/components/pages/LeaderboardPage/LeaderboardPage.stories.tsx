@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import LeaderboardPage from "@/components/pages/LeaderbpardPage";
+import LeaderboardPage from "@/components/pages/LeaderboardPage";
 
 const meta = {
   title: "Pages/Leaderboard",

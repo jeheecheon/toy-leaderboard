@@ -4,6 +4,7 @@ import { twMerge } from "tailwind-merge";
 const textVariants = cva("whitespace-break-spaces", {
   variants: {
     size: {
+      "3xsmall": "text-3xs",
       xsmall: "text-xs lg:text-sm",
       small: "text-sm",
       medium: "text-base",
@@ -18,6 +19,7 @@ const textVariants = cva("whitespace-break-spaces", {
     },
     weight: {
       normal: "font-normal",
+      semibold: "font-semibold",
       bold: "font-bold",
       light: "font-light",
     },
@@ -46,9 +48,9 @@ interface TextProps extends VariantProps<typeof textVariants> {
 }
 
 function TextAtom(props: TextProps) {
-  const { size, color, weight, alignment, children, className } = props;
+  const { size, color, weight, alignment, children, className, font } = props;
 
-  const classes = textVariants({ size, color, weight, alignment });
+  const classes = textVariants({ size, color, weight, alignment, font });
 
   return <p className={twMerge(classes, className)}>{children}</p>;
 }
