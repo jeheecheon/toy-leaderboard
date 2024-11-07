@@ -8,7 +8,7 @@
   #root {
     height: 100%;
     width: 100%;
-    font-family: "Quantico", sans-serif;
+    @apply font-quantico;
   }
 
   * {
