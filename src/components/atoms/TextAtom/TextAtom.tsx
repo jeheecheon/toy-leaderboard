@@ -1,4 +1,5 @@
 import { cva, VariantProps } from "class-variance-authority";
+import { twMerge } from "tailwind-merge";
 
 const textVariants = cva("whitespace-break-spaces", {
   variants: {
@@ -13,7 +14,7 @@ const textVariants = cva("whitespace-break-spaces", {
       primary: "text-white",
       secondary: "text-gray-400",
       highlight: "text-highlight",
-      gray: "text-[#777777]"
+      gray: "text-dark-gray",
     },
     weight: {
       normal: "font-normal",
@@ -41,14 +42,15 @@ const textVariants = cva("whitespace-break-spaces", {
 
 interface TextProps extends VariantProps<typeof textVariants> {
   children?: string;
+  className?: string;
 }
 
 function TextAtom(props: TextProps) {
-  const { size, color, weight, alignment, children } = props;
+  const { size, color, weight, alignment, children, className } = props;
 
   const classes = textVariants({ size, color, weight, alignment });
 
-  return <p className={classes}>{children}</p>;
+  return <p className={twMerge(classes, className)}>{children}</p>;
 }
 
 export default TextAtom;

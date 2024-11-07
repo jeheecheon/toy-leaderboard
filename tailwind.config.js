@@ -9,7 +9,8 @@ export default {
       },
       colors: {
         highlight: "rgb(176, 226, 72)",
-      }
+        "dark-gray": "#777777",
+      },
     },
   },
   plugins: [],
