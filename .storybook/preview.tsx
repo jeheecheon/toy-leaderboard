@@ -1,6 +1,8 @@
 import React from "react";
 import type { Preview } from "@storybook/react";
 import { MemoryRouter } from "react-router-dom";
+import { QueryClientProvider } from "@tanstack/react-query";
+import { queryClient } from "@/utils/tanstack";
 
 import "@/assets/styles/app.css";
 
@@ -14,9 +16,11 @@ const preview: Preview = {
     },
   },
   decorators: (Story) => (
-    <MemoryRouter initialEntries={["/"]}>
-      <Story />
-    </MemoryRouter>
+    <QueryClientProvider client={queryClient}>
+      <MemoryRouter initialEntries={["/"]}>
+        <Story />
+      </MemoryRouter>
+    </QueryClientProvider>
   ),
 };
 

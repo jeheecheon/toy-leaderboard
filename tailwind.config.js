@@ -11,6 +11,9 @@ export default {
         highlight: "rgb(176, 226, 72)",
         "dark-gray": "#777777",
       },
+      fontSize: {
+        "3xs": "0.625rem",
+      },
     },
   },
   plugins: [],
