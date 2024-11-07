@@ -10,6 +10,8 @@ const textVariants = cva("whitespace-break-spaces", {
       medium: "text-base",
       large: "text-lg",
       xlarge: "text-xl",
+      "4xlarge": "text-[2.1875rem]",
+      "5xlarge": "text-[2.5em]",
     },
     color: {
       primary: "text-white",
