@@ -2,7 +2,15 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        quantico: ["Quantico", "sans-serif"],
+        inter: ["Inter", "sans-serif"],
+      },
+      colors: {
+        highlight: "rgb(176, 226, 72)",
+      }
+    },
   },
   plugins: [],
 };
