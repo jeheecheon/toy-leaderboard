@@ -16,8 +16,13 @@ function SortOptionMolecule(props: SortOptionMoleculeProps) {
 
   function handleClick() {
     const sortOrder = searchParams.get("sort-order") ?? "desc";
+    const showBy = searchParams.get("show-by") ?? "10";
 
-    setSearchParams({ "sort-order": sortOrder, "sort-option": sortOption });
+    setSearchParams({
+      "sort-option": sortOption,
+      "sort-order": sortOrder,
+      "show-by": showBy,
+    });
   }
 
   return (

@@ -5,10 +5,15 @@ function useToggleSortOrder() {
 
   const sortOption = searchParams.get("sort-option") ?? "score";
   const sortOrder = searchParams.get("sort-order") === "asc" ? "desc" : "asc";
+  const showBy = searchParams.get("show-by") ?? "10";
 
   return {
     toggleSortOrder() {
-      setSearchParams({ "sort-option": sortOption, "sort-order": sortOrder });
+      setSearchParams({
+        "sort-option": sortOption,
+        "sort-order": sortOrder,
+        "show-by": showBy,
+      });
     },
   };
 }

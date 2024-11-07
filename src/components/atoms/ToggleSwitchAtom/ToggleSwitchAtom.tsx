@@ -10,7 +10,7 @@ function ToggleSwitchAtom(props: ToggleSwitchAtomProps) {
 
   return (
     <button
-      className="w-16 h-8 rounded-full border-2 border-stone-800 flex items-center p-1"
+      className="w-[3.7rem] h-8 rounded-full border-2 border-stone-800 flex items-center p-1"
       onClick={onClick}
     >
       <div
