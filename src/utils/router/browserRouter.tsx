@@ -1,4 +1,4 @@
-import LeaderboardPage from "@/components/pages/LeaderbpardPage";
+import LeaderboardPage from "@/components/pages/LeaderboardPage";
 import {
   createBrowserRouter,
   createRoutesFromElements,
