@@ -1,7 +1,11 @@
+import { useEffect } from "react";
+
 function useTemporaryRedirect() {
-  if (window.location.pathname === "/") {
-    window.location.href = "/leaderboard";
-  }
+  useEffect(() => {
+    if (window.location.pathname === "/") {
+      window.location.href = "/leaderboard";
+    }
+  }, []);
 
   return null;
 }
