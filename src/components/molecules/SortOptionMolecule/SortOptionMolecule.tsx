@@ -9,14 +9,15 @@ interface SortOptionMoleculeProps {
 }
 
 function SortOptionMolecule(props: SortOptionMoleculeProps) {
-  const setSearchParams = useSearchParams()[1];
-
+  const [searchParams, setSearchParams] = useSearchParams();
   const { sortOption, title } = props;
 
   const isSortOptionSelected = useIsSortOptionSelected(sortOption);
 
   function handleClick() {
-    setSearchParams({ "sort-option": sortOption });
+    const sortOrder = searchParams.get("sort-order") ?? "desc";
+
+    setSearchParams({ "sort-order": sortOrder, "sort-option": sortOption });
   }
 
   return (

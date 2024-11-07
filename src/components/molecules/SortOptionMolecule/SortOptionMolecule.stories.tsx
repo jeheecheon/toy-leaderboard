@@ -14,8 +14,30 @@ export default meta;
 
 type story = StoryObj<typeof meta>;
 
-export const Primary: story = {
+export const wins: story = {
   args: {
     sortOption: "wins",
+    title: "wins",
+  },
+}
+
+export const losses: story = {
+  args: {
+    sortOption: "losses",
+    title: "losses",
+  },
+}
+
+export const score: story = {
+  args: {
+    sortOption: "score",
+    title: "score",
+  },
+}
+
+export const winRate: story = {
+  args: {
+    sortOption: "winRate",
+    title: "win rate",
   },
 }
