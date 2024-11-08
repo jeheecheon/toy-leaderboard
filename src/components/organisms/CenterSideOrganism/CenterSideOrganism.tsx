@@ -21,7 +21,7 @@ function CenterSideOrganism(props: CenterSideOrganismProps) {
       {/* 플레이스홀더! */}
       <div className="w-full lg:pt-[5.5rem]" />
 
-      <div className="lg:overflow-y-auto lg:overflow-x-hidden">
+      <div className="lg:overflow-y-auto lg:overflow-x-hidden pb-5">
         <div className="text-center mb-5">
           <TextAtom className="text-[2.5rem] lg:text-[6rem]">
             Leaderboard
