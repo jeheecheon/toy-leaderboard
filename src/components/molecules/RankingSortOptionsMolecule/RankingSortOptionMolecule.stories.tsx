@@ -8,12 +8,6 @@ const meta = {
     layout: "centered",
   },
   tags: ["autodocs"],
-  args: {
-    wins: 10,
-    losses: 10,
-    winRate: 0.5,
-    score: 100,
-  },
 } satisfies Meta<typeof RankingSortOptionsMolecule>;
 
 export default meta;

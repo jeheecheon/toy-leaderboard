@@ -42,6 +42,7 @@ function useRanking() {
   useEffect(() => {
     const sortedRanking = sortRanking(data, sortBy, sortOrder);
     setRanking(sortedRanking);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sortBy, sortOrder]);
 
   return { ...query, data };

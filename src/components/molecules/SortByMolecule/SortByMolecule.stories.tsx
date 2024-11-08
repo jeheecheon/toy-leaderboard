@@ -15,28 +15,28 @@ export default meta;
 
 type story = StoryObj<typeof meta>;
 
-export const wins: story = {
+export const Wins: story = {
   args: {
     sortBy: SortBy.Wins,
     title: "wins",
   },
 };
 
-export const losses: story = {
+export const Losses: story = {
   args: {
     sortBy: SortBy.Losses,
     title: "losses",
   },
 };
 
-export const score: story = {
+export const Score: story = {
   args: {
     sortBy: SortBy.Score,
     title: "score",
   },
 };
 
-export const winRate: story = {
+export const WinRate: story = {
   args: {
     sortBy: SortBy.WinRate,
     title: "win rate",

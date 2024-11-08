@@ -10,7 +10,6 @@ const meta = {
   tags: ["autodocs"],
   args: {
     isError: false,
-    isLoading: false,
     isSuccess: false,
     ranking: [
       {

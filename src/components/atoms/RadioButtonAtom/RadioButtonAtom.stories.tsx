@@ -19,7 +19,7 @@ export const Selected: story = {
     title: "10",
     isSelected: true,
     index: 0,
-    onClick(index) {},
+    onClick() {},
   },
 };
 
@@ -28,6 +28,6 @@ export const NotSelected: story = {
     title: "20",
     isSelected: false,
     index: 0,
-    onClick(index) {},
+    onClick() {},
   },
 };

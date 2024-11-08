@@ -8,10 +8,16 @@ const meta = {
     layout: "centered",
   },
   tags: ["autodocs"],
+  args: {
+    isOn: false,
+    titleWhenOff: "Descending",
+    titleWhenOn: "Ascending",
+    onClick() {},
+  },
 } satisfies Meta<typeof ToggleWithTitleMolecule>;
 
 export default meta;
 
 type story = StoryObj<typeof meta>;
 
-export const Primary: story = {};
+export const Default: story = {};

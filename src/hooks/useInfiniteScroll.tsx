@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 
 function useInfiniteScroll(callback: () => void, delay = 3000) {
-  const loadingRef = useRef<HTMLDivElement>(null);
+  const loadingRef = useRef<HTMLDivElement>(null!);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -17,10 +17,11 @@ function useInfiniteScroll(callback: () => void, delay = 3000) {
       { root: null, rootMargin: "0px", threshold: 1.0 }
     );
 
-    if (loadingRef.current) observer.observe(loadingRef.current);
+    observer.observe(loadingRef.current);
 
     return () => {
-      if (loadingRef.current) observer.unobserve(loadingRef.current);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+      observer.unobserve(loadingRef.current);
     };
   }, [callback, delay]);
 

@@ -9,7 +9,6 @@ const meta = {
   },
   args: {
     isError: false,
-    isLoading: false,
     isSuccess: false,
     ranking: [
       {

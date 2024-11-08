@@ -5,17 +5,14 @@ import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
 import tseslint from "typescript-eslint";
 import eslintConfigPrettier from "eslint-config-prettier";
+import storybook from "eslint-plugin-storybook";
 
 export default tseslint.config(
   { ignores: ["dist"] },
+  ...storybook.configs["flat/recommended"],
+  js.configs.recommended,
+  ...tseslint.configs.recommended,
   {
-    extends: ["plugin:storybook/recommended"],
-  },
-  {
-    extends: [
-      js.configs.recommended,
-      ...tseslint.configs.recommendedTypeChecked,
-    ],
     files: ["**/*.{ts,tsx}"],
     languageOptions: {
       ecmaVersion: 2020,
