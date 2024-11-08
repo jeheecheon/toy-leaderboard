@@ -20,6 +20,7 @@ const textVariants = cva("whitespace-break-spaces inline", {
       secondary: "text-gray-400",
       highlight: "text-highlight",
       gray: "text-dark-gray",
+      red: "text-red-500",
     },
     weight: {
       normal: "font-normal",

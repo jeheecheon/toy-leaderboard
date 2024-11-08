@@ -28,21 +28,29 @@ function CenterSideOrganism(props: CenterSideOrganismProps) {
           </TextAtom>
         </div>
 
-        <div className="space-y-8 flex flex-col items-center">
-          {isSuccess &&
-            ranking
-              .slice(0, show)
-              .map((rank, index) => (
-                <RankItemOrganism
-                  key={rank.player.id}
-                  rank={rank}
-                  place={index + 1}
-                  display={sortBy}
-                />
-              ))}
-        </div>
+        {isError ? (
+          <TextAtom size="large" color="red" className="text-center block">
+            Error occurred while fetching data...
+          </TextAtom>
+        ) : (
+          <>
+            <div className="space-y-8 flex flex-col items-center">
+              {isSuccess &&
+                ranking
+                  .slice(0, show)
+                  .map((rank, index) => (
+                    <RankItemOrganism
+                      key={rank.player.id}
+                      rank={rank}
+                      place={index + 1}
+                      display={sortBy}
+                    />
+                  ))}
+            </div>
 
-        <InfiniteLoadingMolecule />
+            <InfiniteLoadingMolecule />
+          </>
+        )}
       </div>
     </div>
   );
