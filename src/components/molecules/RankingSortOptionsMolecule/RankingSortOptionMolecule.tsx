@@ -20,7 +20,7 @@ function RankingSortOptionMolecule(props: RankingSortOptionMoleculeProps) {
 
   return (
     <div className={className}>
-      <ul className="flex flex-col items-end justify-center">
+      <ul className="flex flex-col lg:items-end justify-center gap-y-3 lg:gap-y-0">
         {[
           { sortBy: SortBy.Score, title: "score" },
           { sortBy: SortBy.Wins, title: "wins" },
@@ -37,6 +37,7 @@ function RankingSortOptionMolecule(props: RankingSortOptionMoleculeProps) {
         radioButtonTitles={radioButonTitles}
         selectedIndex={selectedRadioIndex}
         onClick={handleSelectRadio}
+        className="lg:order-1 order-2"
       />
 
       <ToggleWithTitleMolecule
@@ -44,6 +45,7 @@ function RankingSortOptionMolecule(props: RankingSortOptionMoleculeProps) {
         onClick={toggleSortOrder}
         titleWhenOff="Descending"
         titleWhenOn="Ascending"
+        className="ml-auto lg:mx-0 mr-4"
       />
     </div>
   );

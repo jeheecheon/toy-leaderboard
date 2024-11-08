@@ -3,6 +3,7 @@ import { SearchParamKeys } from "@/constants";
 import { SortBy } from "@/constants";
 import useIsSortBySelected from "@/hooks/useIsSortBySelected";
 import { useSearchParams } from "react-router-dom";
+import { twMerge } from "tailwind-merge";
 
 interface SortByMoleculeProps {
   sortBy: SortBy;
@@ -29,11 +30,14 @@ function SortByMolecule(props: SortByMoleculeProps) {
       <TextAtom
         size={isSortBySelected ? "5xlarge" : "4xlarge"}
         color={isSortBySelected ? "highlight" : "gray"}
-        className="hover:text-highlight"
+        className="hover:text-highlight text-xl"
       >
         {title}
       </TextAtom>
-      <TextAtom color="highlight" className={isSortBySelected ? "" : "hidden"}>
+      <TextAtom
+        color="highlight"
+        className={twMerge(isSortBySelected ? "" : "hidden", "hidden lg:inline")}
+      >
         0x&
       </TextAtom>
     </div>

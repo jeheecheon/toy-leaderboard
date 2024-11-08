@@ -22,7 +22,7 @@ function CenterSideOrganism(props: CenterSideOrganismProps) {
       <div className="w-full lg:pt-[5.5rem]" />
 
       <div className="lg:overflow-y-auto lg:overflow-x-hidden pb-5">
-        <div className="text-center mb-5">
+        <div className="text-center mb-10">
           <TextAtom className="text-[2.5rem] lg:text-[6rem]">
             Leaderboard
           </TextAtom>
@@ -31,7 +31,7 @@ function CenterSideOrganism(props: CenterSideOrganismProps) {
           </TextAtom>
         </div>
 
-        <RankingSortOptionMolecule className="lg:hidden pb-6 flex flex-col items-end" />
+        <RankingSortOptionMolecule className="lg:hidden pb-10 flex justify-between items-end" />
 
         {isError ? (
           <TextAtom size="large" color="red" className="text-center block">
