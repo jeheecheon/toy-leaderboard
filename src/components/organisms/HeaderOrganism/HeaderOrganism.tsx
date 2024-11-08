@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 
 function HeaderOrganism() {
   return (
-    <div className="z-10 flex items-center justify-between font-quantico lg:fixed lg:w-[calc(100%-80px)] pt-5 lg:pt-10">
+    <div className="z-10 flex items-center justify-between font-quantico lg:fixed lg:w-[calc(100%-80px)] 
+    pt-5 lg:pt-10 pb-2">
       <div className="flex flex-col lg:flex-row lg:items-center gap-2 lg:gap-20">
         <Link to="/leaderboard">
           <LogoAtom />

@@ -1,7 +1,8 @@
 import { cva, VariantProps } from "class-variance-authority";
+import { ReactNode } from "react";
 import { twMerge } from "tailwind-merge";
 
-const textVariants = cva("whitespace-break-spaces", {
+const textVariants = cva("whitespace-break-spaces inline", {
   variants: {
     size: {
       "3xsmall": "text-3xs",
@@ -12,6 +13,7 @@ const textVariants = cva("whitespace-break-spaces", {
       xlarge: "text-xl",
       "4xlarge": "text-[2.1875rem]",
       "5xlarge": "text-[2.5em]",
+      "6xlarge": "text-[6em]",
     },
     color: {
       primary: "text-white",
@@ -25,11 +27,6 @@ const textVariants = cva("whitespace-break-spaces", {
       bold: "font-bold",
       light: "font-light",
     },
-    alignment: {
-      left: "text-left",
-      center: "text-center",
-      right: "text-right",
-    },
     font: {
       inter: "font-inter",
       quantico: "font-quantico",
@@ -39,20 +36,19 @@ const textVariants = cva("whitespace-break-spaces", {
     size: "medium",
     color: "primary",
     weight: "normal",
-    alignment: "left",
     font: "quantico",
   },
 });
 
 interface TextProps extends VariantProps<typeof textVariants> {
-  children?: string;
+  children?: ReactNode;
   className?: string;
 }
 
 function TextAtom(props: TextProps) {
-  const { size, color, weight, alignment, children, className, font } = props;
+  const { size, color, weight, children, className, font } = props;
 
-  const classes = textVariants({ size, color, weight, alignment, font });
+  const classes = textVariants({ size, color, weight, font });
 
   return <p className={twMerge(classes, className)}>{children}</p>;
 }

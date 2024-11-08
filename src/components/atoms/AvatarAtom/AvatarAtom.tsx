@@ -4,7 +4,7 @@ import { cva, VariantProps } from "class-variance-authority";
 import { twMerge } from "tailwind-merge";
 
 const avatarVariants = cva(
-  ["rounded-full", "flex", "justify-center", "items-center"],
+  ["rounded-full", "flex", "justify-center", "items-center", "ring-4", "ring-white"],
   {
     variants: {
       size: {
@@ -21,17 +21,18 @@ const avatarVariants = cva(
 
 interface AvatarProps extends VariantProps<typeof avatarVariants> {
   name: string;
+  className?: string;
 }
 
 function AvatarAtom(props: AvatarProps) {
-  const { size, name } = props;
+  const { size, name, className } = props;
   const classes = avatarVariants({ size });
 
   const initials = useInitials(name);
   const ref = useBackgroundColorFromName(name);
 
   return (
-    <div ref={ref} className={twMerge(classes)}>
+    <div ref={ref} className={twMerge(classes, className)}>
       {initials}
     </div>
   );

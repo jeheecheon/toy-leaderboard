@@ -5,7 +5,7 @@ const meta = {
   title: "Organisms/Header",
   component: HeaderOrganism,
   parameters: {
-    layout: "centered",
+    layout: "fullscreen",
   },
   tags: ["autodocs"],
 } satisfies Meta<typeof HeaderOrganism>;
@@ -14,4 +14,4 @@ export default meta;
 
 type story = StoryObj<typeof meta>;
 
-export const Primary: story = {};
+export const Default: story = {};

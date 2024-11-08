@@ -14,11 +14,7 @@ function setWinRate(rank: Rank): Rank {
   return rank;
 }
 
-function sortRanking(
-  ranking: Rank[],
-  sortBy: SortBy,
-  direction: SortOrder
-) {
+function sortRanking(ranking: Rank[], sortBy: SortBy, direction: SortOrder) {
   const sortedRanking = [...ranking].sort((a, b) => {
     const diff = a[sortBy] - b[sortBy];
     return direction === SortOrder.ASCENDING ? diff : -diff;
@@ -27,4 +23,22 @@ function sortRanking(
   return sortedRanking;
 }
 
-export { setWinRate, computeWinRate, sortRanking };
+function getOrdinalSuffix(num: number): string {
+  const lastDigit = num % 10;
+  const lastTwoDigits = num % 100;
+
+  if (lastTwoDigits >= 11 && lastTwoDigits <= 13) return `${num}th`;
+
+  switch (lastDigit) {
+    case 1:
+      return `${num}st`;
+    case 2:
+      return `${num}nd`;
+    case 3:
+      return `${num}rd`;
+    default:
+      return `${num}th`;
+  }
+}
+
+export { setWinRate, computeWinRate, sortRanking, getOrdinalSuffix };
