@@ -1,6 +1,6 @@
 import TextAtom from "@/components/atoms/TextAtom";
 import medium from "@/assets/images/medium.png";
-import linkedIn from "@/assets/images/linkedIn.png";
+import linkedIn from "@/assets/images/linked-in.png";
 
 function LeftSideOrganism() {
   return (
