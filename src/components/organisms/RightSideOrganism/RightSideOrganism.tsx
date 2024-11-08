@@ -3,7 +3,7 @@ import RankingSortOptionMolecule from "@/components/molecules/RankingSortOptions
 function RightSideOrganism() {
   return (
     <div className="max-w-80 w-full hidden lg:flex flex-col items-end justify-center ">
-      <RankingSortOptionMolecule />
+      <RankingSortOptionMolecule className="flex flex-col items-end" />
     </div>
   );
 }
