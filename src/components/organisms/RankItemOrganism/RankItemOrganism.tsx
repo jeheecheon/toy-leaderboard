@@ -20,7 +20,8 @@ function RankItemOrganism(props: RankItemOrganismProps) {
     <div
       key={rank.player.id}
       className="flex items-center justify-between border border-gray-50/10 bg-gray-50/5
-      rounded-lg pl-3 lg:pl-4 lg:max-w-[40rem] w-full"
+      rounded-lg pl-3 lg:pl-4 lg:max-w-[40rem] w-full 
+      hover:-translate-y-2 transition-transform duration-200"
     >
       <TextAtom className="w-12 lg:w-16 shrink-0 text-sm lg:text-base">{getOrdinalSuffix(place)}</TextAtom>
 

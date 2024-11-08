@@ -2,7 +2,7 @@ import { cva, VariantProps } from "class-variance-authority";
 import { ReactNode } from "react";
 import { twMerge } from "tailwind-merge";
 
-const textVariants = cva("whitespace-break-spaces inline", {
+const textVariants = cva("whitespace-break-spaces inline transition-colors duration-300", {
   variants: {
     size: {
       "3xsmall": "text-3xs",

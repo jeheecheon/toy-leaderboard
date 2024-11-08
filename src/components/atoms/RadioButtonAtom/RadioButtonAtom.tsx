@@ -10,7 +10,7 @@ export interface RadioButtonAtomProps {
 const radioButtonVariants = cva(
   [
     "w-10 h-10 flex items-center justify-center cursor-pointer rounded-full",
-    "ring-2",
+    "ring-2 transition-colors duration-200 hover:bg-highlight hover:text-gray-700",
   ],
   {
     variants: {

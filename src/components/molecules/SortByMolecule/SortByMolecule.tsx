@@ -29,6 +29,7 @@ function SortByMolecule(props: SortByMoleculeProps) {
       <TextAtom
         size={isSortBySelected ? "5xlarge" : "4xlarge"}
         color={isSortBySelected ? "highlight" : "gray"}
+        className="hover:text-highlight"
       >
         {title}
       </TextAtom>
