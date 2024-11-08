@@ -1,34 +1,12 @@
 import { create } from "zustand";
-import {
-  StoreState,
-  SortDirection,
-  SortOptions,
-  Rank,
-} from "@/stores/ranking/types";
+import { RankingStoreState, Rank } from "@/stores/ranking";
 import { createSelectors } from "@/utils/zustand";
 
-const useRankingStoreBase = create<StoreState>()((set, get) => ({
+const useRankingStoreBase = create<RankingStoreState>()((set) => ({
   ranking: [],
-  sortedBy: "score",
-  sortDirection: SortDirection.Descending,
 
   setRanking(newRanking: Rank[]) {
     set(() => ({ ranking: newRanking }));
-  },
-
-  sortRanking(sortBy: SortOptions, direction: SortDirection) {
-    const { ranking } = get();
-
-    const sortedRanking = [...ranking].sort((a, b) => {
-      const diff = a[sortBy] - b[sortBy];
-      return direction === SortDirection.Ascending ? diff : -diff;
-    });
-
-    set(() => ({
-      ranking: sortedRanking,
-      sortedBy: sortBy,
-      sortDirection: direction,
-    }));
   },
 }));
 

@@ -1,19 +1,23 @@
 import { useSearchParams } from "react-router-dom";
+import useSortOptions from "./useSortOptions";
+import { SortOrder } from "@/constants";
+import { SearchParamKeys } from "@/constants";
 
 function useToggleSortOrder() {
   const [searchParams, setSearchParams] = useSearchParams();
+  const newSearchParams = new URLSearchParams(searchParams);
+  const { sortOrder } = useSortOptions();
 
-  const sortOption = searchParams.get("sort-option") ?? "score";
-  const sortOrder = searchParams.get("sort-order") === "asc" ? "desc" : "asc";
-  const showBy = searchParams.get("show-by") ?? "10";
+  newSearchParams.set(
+    SearchParamKeys.SortOrder,
+    sortOrder === SortOrder.ASCENDING
+      ? SortOrder.DESCENDING
+      : SortOrder.ASCENDING
+  );
 
   return {
     toggleSortOrder() {
-      setSearchParams({
-        "sort-option": sortOption,
-        "sort-order": sortOrder,
-        "show-by": showBy,
-      });
+      setSearchParams(newSearchParams);
     },
   };
 }

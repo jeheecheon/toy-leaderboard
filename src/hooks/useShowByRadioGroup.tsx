@@ -1,10 +1,11 @@
+import { SearchParamKeys } from "@/constants";
 import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
 
-function useSortByRadioGroup(radioButonTitles: string[]) {
+function useShowByRadioGroup(radioButonTitles: string[]) {
   const [searchParams, setSearchParams] = useSearchParams();
   const [selectedRadioIndex, setSelectedRadioIndex] = useState(() => {
-    const sortBy = searchParams.get("show-by");
+    const sortBy = searchParams.get(SearchParamKeys.ShowBy);
     if (sortBy === null) return 0;
 
     const index = radioButonTitles.indexOf(sortBy);
@@ -17,15 +18,10 @@ function useSortByRadioGroup(radioButonTitles: string[]) {
 
   const handleSelectRadio = (index: number) => {
     setSelectedRadioIndex(index);
+    const newSearchParams = new URLSearchParams(searchParams);
+    newSearchParams.set(SearchParamKeys.ShowBy, radioButonTitles[index]);
 
-    const sortOption = searchParams.get("sort-option") ?? "score";
-    const sortOrder = searchParams.get("sort-order") ?? "desc";
-
-    setSearchParams({
-      "sort-option": sortOption,
-      "sort-order": sortOrder,
-      "show-by": radioButonTitles[index],
-    });
+    setSearchParams(newSearchParams);
   };
 
   return {
@@ -35,4 +31,4 @@ function useSortByRadioGroup(radioButonTitles: string[]) {
   };
 }
 
-export default useSortByRadioGroup;
+export default useShowByRadioGroup;

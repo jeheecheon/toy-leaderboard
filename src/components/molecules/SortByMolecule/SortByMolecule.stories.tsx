@@ -1,14 +1,15 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import SortOptionMolecule from "@/components/molecules/SortOptionMolecule";
+import SortByMolecule from "@/components/molecules/SortByMolecule";
+import { SortBy } from "@/constants";
 
 const meta = {
-  title: "Molecules/SortOption",
-  component: SortOptionMolecule,
+  title: "Molecules/SortBy",
+  component: SortByMolecule,
   parameters: {
     layout: "centered",
   },
   tags: ["autodocs"],
-} satisfies Meta<typeof SortOptionMolecule>;
+} satisfies Meta<typeof SortByMolecule>;
 
 export default meta;
 
@@ -16,28 +17,28 @@ type story = StoryObj<typeof meta>;
 
 export const wins: story = {
   args: {
-    sortOption: "wins",
+    sortBy: SortBy.Wins,
     title: "wins",
   },
-}
+};
 
 export const losses: story = {
   args: {
-    sortOption: "losses",
+    sortBy: SortBy.Losses,
     title: "losses",
   },
-}
+};
 
 export const score: story = {
   args: {
-    sortOption: "score",
+    sortBy: SortBy.Score,
     title: "score",
   },
-}
+};
 
 export const winRate: story = {
   args: {
-    sortOption: "winRate",
+    sortBy: SortBy.WinRate,
     title: "win rate",
   },
-}
+};

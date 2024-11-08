@@ -2,9 +2,16 @@ import LeaderboardTemplate from "@/components/templates/LeaderboardTemplate/Lead
 import useRanking from "@/hooks/useRanking";
 
 function LeaderboardPage() {
-  const { data, isError, isFetched, isFetching} = useRanking();
+  const { data, isError, isFetching, isSuccess } = useRanking();
 
-  return <LeaderboardTemplate />;
+  return (
+    <LeaderboardTemplate
+      ranking={data}
+      isSuccess={isSuccess}
+      isLoading={isFetching}
+      isError={isError}
+    />
+  );
 }
 
 export default LeaderboardPage;
