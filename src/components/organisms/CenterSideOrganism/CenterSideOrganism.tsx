@@ -3,6 +3,7 @@ import { Rank, useRankingStore } from "@/stores/ranking";
 import RankItemOrganism from "../RankItemOrganism";
 import useSortOptions from "@/hooks/useSortOptions";
 import InfiniteLoadingMolecule from "@/components/molecules/InfiniteLoadingMolecule";
+import RankingSortOptionMolecule from "@/components/molecules/RankingSortOptionsMolecule";
 
 interface CenterSideOrganismProps {
   ranking: Rank[];
@@ -22,11 +23,15 @@ function CenterSideOrganism(props: CenterSideOrganismProps) {
 
       <div className="lg:overflow-y-auto lg:overflow-x-hidden">
         <div className="text-center mb-5">
-          <TextAtom className="text-[2.5rem] lg:text-[6rem]">Leaderboard</TextAtom>
+          <TextAtom className="text-[2.5rem] lg:text-[6rem]">
+            Leaderboard
+          </TextAtom>
           <TextAtom color="highlight" className="text-[2.5rem] lg:text-[6rem]">
             .
           </TextAtom>
         </div>
+
+        <RankingSortOptionMolecule className="lg:hidden pb-6 flex flex-col items-end" />
 
         {isError ? (
           <TextAtom size="large" color="red" className="text-center block">

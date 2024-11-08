@@ -11,7 +11,7 @@ function RankDetailsMolecule(props: RankDetailsMoleculeProps) {
   const { wins, losses, winRate, score } = props;
 
   return (
-    <div className="flex flex-col md:flex-row px-5 gap-x-2 sm:gap-x-6 lg:gap-x-3">
+    <div className="flex flex-col md:flex-row pr-5 gap-x-2 sm:gap-x-6 lg:gap-x-3">
       <div className="lg:w-20 flex flex-col shrink-0">
         <div className="flex">
           <TextAtom size="xsmall" color="highlight">
