@@ -24,19 +24,21 @@ function SortByMolecule(props: SortByMoleculeProps) {
 
   return (
     <div
-      className="inline-flex items-center gap-3 cursor-pointer leading-[5.625rem]"
+      className="inline-flex items-center gap-3 cursor-pointer lg:h-[5.625rem]"
       onClick={handleClick}
     >
       <TextAtom
-        size={isSortBySelected ? "5xlarge" : "4xlarge"}
         color={isSortBySelected ? "highlight" : "gray"}
-        className="hover:text-highlight text-xl"
+        className={twMerge(
+          "hover:text-highlight text-xl",
+          isSortBySelected ? "lg:text-[2.5rem]" : "lg:text-[2.1875rem]"
+        )}
       >
         {title}
       </TextAtom>
       <TextAtom
         color="highlight"
-        className={twMerge(isSortBySelected ? "" : "hidden", "hidden lg:inline")}
+        className={isSortBySelected ? "hidden lg:inline" : "hidden"}
       >
         0x&
       </TextAtom>

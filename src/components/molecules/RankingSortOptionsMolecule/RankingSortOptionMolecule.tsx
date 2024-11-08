@@ -45,7 +45,7 @@ function RankingSortOptionMolecule(props: RankingSortOptionMoleculeProps) {
         onClick={toggleSortOrder}
         titleWhenOff="Descending"
         titleWhenOn="Ascending"
-        className="ml-auto lg:mx-0 mr-4"
+        className="ml-auto lg:mx-0 mr-4 order-1 lg:order-2"
       />
     </div>
   );
