@@ -9,8 +9,9 @@ function useSortOptions() {
     SortBy.Score) as SortBy;
   const sortOrder = (searchParams.get(SearchParamKeys.SortOrder) ??
     SortOrder.DESCENDING) as SortOrder;
+  const showBy = (searchParams.get(SearchParamKeys.ShowBy) ?? "10") as string;
 
-  return { sortBy, sortOrder };
+  return { sortBy, sortOrder, showBy };
 }
 
 export default useSortOptions;

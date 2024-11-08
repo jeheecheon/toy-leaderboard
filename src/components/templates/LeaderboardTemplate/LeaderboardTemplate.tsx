@@ -6,13 +6,12 @@ import { Rank } from "@/stores/ranking";
 
 interface LeaderboardTemplateProps {
   ranking: Rank[];
-  isLoading: boolean;
   isSuccess: boolean;
   isError: boolean;
 }
 
 function LeaderboardTemplate(props: LeaderboardTemplateProps) {
-  const { ranking, isLoading, isSuccess, isError } = props;
+  const { ranking, isSuccess, isError } = props;
 
   return (
     <div className="bg-black w-screen h-screen flex flex-col px-6 lg:px-10">
@@ -23,7 +22,6 @@ function LeaderboardTemplate(props: LeaderboardTemplateProps) {
         <CenterSideOrganism
           ranking={ranking}
           isSuccess={isSuccess}
-          isLoading={isLoading}
           isError={isError}
         />
         <RightSideOrganism />

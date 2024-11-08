@@ -18,6 +18,8 @@ type Rank = {
 
 type RankingStoreState = {
   ranking: Rank[];
+  show: number;
+  showMore: (count: number) => void;
   setRanking: (newRanking: Rank[]) => void;
 };
 

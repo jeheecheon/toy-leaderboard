@@ -4,9 +4,12 @@ import { createSelectors } from "@/utils/zustand";
 
 const useRankingStoreBase = create<RankingStoreState>()((set) => ({
   ranking: [],
-
+  show: 0,
   setRanking(newRanking: Rank[]) {
     set(() => ({ ranking: newRanking }));
+  },
+  showMore(count: number) {
+    set((state) => ({ show: state.show + count }));
   },
 }));
 
