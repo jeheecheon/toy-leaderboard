@@ -9,8 +9,8 @@ function NameGuildMolecule(props: NameGuildMoleculeProps) {
   const { name, guild } = props;
 
   return (
-    <div className="basis-full ml-10 flex flex-col">
-      <TextAtom size="medium">{name}</TextAtom>
+    <div className="lg:ml-6 flex flex-col basis-full">
+      <TextAtom size="medium" className="pr-2 whitespace-break-spaces break-words">{name}</TextAtom>
       <TextAtom size="xsmall" color="gray">
         {guild}
       </TextAtom>

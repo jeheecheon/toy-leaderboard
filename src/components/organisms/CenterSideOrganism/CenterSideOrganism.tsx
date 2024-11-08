@@ -16,14 +16,14 @@ function CenterSideOrganism(props: CenterSideOrganismProps) {
   const show = useRankingStore.use.show();
 
   return (
-    <div className="basis-full flex flex-col lg:border-x lg:border-gray-50/30 ">
+    <div className="basis-full flex flex-col lg:border-x lg:border-gray-50/30">
       {/* 플레이스홀더! */}
-      <div className="w-full pt-[5.5rem]" />
+      <div className="w-full lg:pt-[5.5rem]" />
 
-      <div className="overflow-y-auto">
+      <div className="lg:overflow-y-auto lg:overflow-x-hidden">
         <div className="text-center mb-5">
-          <TextAtom size="6xlarge">Leaderboard</TextAtom>
-          <TextAtom color="highlight" size="6xlarge">
+          <TextAtom className="text-[2.5rem] lg:text-[6rem]">Leaderboard</TextAtom>
+          <TextAtom color="highlight" className="text-[2.5rem] lg:text-[6rem]">
             .
           </TextAtom>
         </div>

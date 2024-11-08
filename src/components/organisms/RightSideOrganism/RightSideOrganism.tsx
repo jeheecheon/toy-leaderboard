@@ -13,7 +13,7 @@ function RightSideOrganism() {
     useShowByRadioGroup(["10", "15", "20"]);
 
   return (
-    <div className="w-80 flex flex-col items-end justify-center shrink-0">
+    <div className="max-w-80 w-full hidden lg:flex flex-col items-end justify-center ">
       <ul className="flex flex-col items-end justify-center">
         {[
           { sortBy: SortBy.Score, title: "score" },

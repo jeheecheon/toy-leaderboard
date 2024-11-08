@@ -14,7 +14,7 @@ function LeaderboardTemplate(props: LeaderboardTemplateProps) {
   const { ranking, isSuccess, isError } = props;
 
   return (
-    <div className="bg-black w-screen h-screen flex flex-col px-6 lg:px-10">
+    <div className="flex flex-col px-6 lg:px-10 h-full w-full">
       <HeaderOrganism />
 
       <div className="flex h-full w-full">

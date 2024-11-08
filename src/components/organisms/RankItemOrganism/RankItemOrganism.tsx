@@ -20,14 +20,14 @@ function RankItemOrganism(props: RankItemOrganismProps) {
     <div
       key={rank.player.id}
       className="flex items-center justify-between border border-gray-50/10 bg-gray-50/5
-      rounded-lg pl-4 max-w-[40rem] w-full"
+      rounded-lg pl-3 lg:pl-4 lg:max-w-[40rem] w-full"
     >
-      <TextAtom className="w-16 shrink-0">{getOrdinalSuffix(place)}</TextAtom>
+      <TextAtom className="w-12 lg:w-16 shrink-0 text-sm lg:text-base">{getOrdinalSuffix(place)}</TextAtom>
 
       <AvatarAtom
         size="medium"
         name={rank.player.name}
-        className="scale-125 shrink-0 [will-change:_scale]"
+        className="scale-125 shrink-0 [will-change:_scale] hidden lg:flex"
       />
 
       <NameGuildMolecule

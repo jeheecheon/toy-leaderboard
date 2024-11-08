@@ -4,7 +4,8 @@ import linkedIn from "@/assets/images/linkedIn.png";
 
 function LeftSideOrganism() {
   return (
-    <div className="flex items-end justify-center [writing-mode:_vertical-rl] w-[7.5rem] shrink-0 space-y-8">
+    <div className="hidden lg:flex items-end justify-center [writing-mode:_vertical-rl] 
+    max-w-[7.5rem] w-full shrink-0 space-y-8">
       <TextAtom
         size="3xsmall"
         font="inter"
