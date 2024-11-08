@@ -5,6 +5,7 @@ import { queryClient } from "@/utils/tanstack";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 import "@/assets/styles/app.css";
+import "@/assets/styles/scrollbar.css";
 
 function App() {
   return (
