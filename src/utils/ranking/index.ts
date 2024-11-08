@@ -16,8 +16,24 @@ function setWinRate(rank: Rank): Rank {
 
 function sortRanking(ranking: Rank[], sortBy: SortBy, direction: SortOrder) {
   const sortedRanking = [...ranking].sort((a, b) => {
-    const diff = a[sortBy] - b[sortBy];
-    return direction === SortOrder.ASCENDING ? diff : -diff;
+    // 우선적으로 sortBy 기준으로 비교
+    const primaryDiff = a[sortBy] - b[sortBy];
+    if (primaryDiff !== 0) {
+      return direction === SortOrder.ASCENDING ? primaryDiff : -primaryDiff;
+    }
+
+    // 정렬 우선 순위 기준 (score > wins > losses > winRate)
+    const scoreDiff = a.score - b.score;
+    if (scoreDiff !== 0) return scoreDiff;
+
+    const winsDiff = a.wins - b.wins;
+    if (winsDiff !== 0) return winsDiff;
+
+    const lossesDiff = a.losses - b.losses;
+    if (lossesDiff !== 0) return lossesDiff;
+
+    const winRateDiff = a.winRate - b.winRate;
+    return winRateDiff;
   });
 
   return sortedRanking;
