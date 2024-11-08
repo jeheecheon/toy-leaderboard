@@ -1,50 +1,17 @@
-# React + TypeScript + Vite
+# 0xand 과제 전형 프로젝트 제출
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 특징
+- [0xand](https://0xand.com/) 공식 사이트 디자인을 참조했습니다.
+- 데이터 로딩 시 지연시간 3초를 뒀습니다.
+- Storybook과 Atomic Design Pattern을 적용했습니다.
+- PostCSS인 Tailwind CSS 으로 스타일링 했습니다.
+- 반응형 디자인으로 구현했습니다.
 
-Currently, two official plugins are available:
+## 사용된 기술스택
+- react
+- tailwind css
+- storybook
+- tanstack query
+- zustand
+- just (추후 예정)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
