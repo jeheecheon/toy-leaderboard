@@ -14,7 +14,7 @@ function useInfiniteScroll(callback: () => void, delay = 3000) {
           return () => clearTimeout(timer);
         }
       },
-      { root: null, rootMargin: "0px", threshold: 1.0 }
+      { root: null, rootMargin: "0px", threshold: 0.1 }
     );
 
     observer.observe(loadingRef.current);
