@@ -27,7 +27,6 @@ function SortByMolecule(props: SortByMoleculeProps) {
       onClick={handleClick}
     >
       <TextAtom
-        alignment="right"
         size={isSortBySelected ? "5xlarge" : "4xlarge"}
         color={isSortBySelected ? "highlight" : "gray"}
       >
