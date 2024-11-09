@@ -10,6 +10,7 @@ const meta = {
   tags: ["autodocs"],
   args: {
     isOn: false,
+    onClick: () => {},
   }
 } satisfies Meta<typeof ToggleSwitchAtom>;
 
